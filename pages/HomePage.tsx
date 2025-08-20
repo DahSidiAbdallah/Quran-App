@@ -65,7 +65,7 @@ const HomePage = () => {
       <main className="p-4 space-y-6 flex-1 overflow-y-auto pb-24">
         <div>
           <p className="text-brand-gray dark:text-gray-400">Assalamualaikum</p>
-          <h1 className="text-2xl font-bold text-brand-dark dark:text-white">Welcome, {profile.name}!</h1>
+          <h1 className="text-2xl font-bold text-brand-dark dark:text-white">{profile.name}</h1>
         </div>
         <CompletionCard />
         <ScheduleCard />

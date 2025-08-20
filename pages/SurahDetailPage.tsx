@@ -4,7 +4,7 @@ import type { SurahFullData, LastRead, Ayah, Bookmarks, Notes, Surah } from '../
 import { fetchSurahDetail, fetchSurahs } from '../services/quranApi';
 import useLocalStorage from '../hooks/useLocalStorage';
 import LoadingSpinner from '../components/LoadingSpinner';
-import { ArrowLeftIcon, BookmarkIcon } from '../components/Icons';
+import { ArrowLeftIcon, BookmarkIcon, PlayCircleIcon, PauseCircleIcon } from '../components/Icons';
 // import AyahRow from '../components/AyahRow';
 import { JUZ_DATA, HIZB_DATA } from '../constants';
 import { SettingsContext } from '../contexts/SettingsContext';
@@ -522,11 +522,11 @@ const SurahDetailPage = () => {
                 <div className="bg-white dark:bg-gray-800 sepia-card-bg rounded-2xl p-4 md:p-8 shadow-lg max-w-2xl w-full mx-auto border border-gray-100">
                     {/* Surah playback controls */}
                     <div className="flex items-center justify-between mb-4">
-                        <div>
-                            <button className="px-3 py-1 bg-brand-cyan text-white rounded mr-2" onClick={handleSurahPlayPause}>
-                                {isSurahPlaying ? 'Pause Surah' : 'Play Surah'}
+                        <div className="flex items-center gap-2">
+                            <button className="p-2 bg-brand-cyan text-white rounded-full" onClick={handleSurahPlayPause}>
+                                {isSurahPlaying ? <PauseCircleIcon className="w-8 h-8" /> : <PlayCircleIcon className="w-8 h-8" />}
                             </button>
-                            <select value={playbackRate} onChange={e => setPlaybackRate(Number(e.target.value))} className="ml-2 px-2 py-1 rounded border text-sm">
+                            <select value={playbackRate} onChange={e => setPlaybackRate(Number(e.target.value))} className="px-2 py-1 rounded border text-sm">
                                 <option value="0.5">0.5x</option>
                                 <option value="0.75">0.75x</option>
                                 <option value="1">1x</option>
@@ -558,34 +558,28 @@ const SurahDetailPage = () => {
                         </div>
                     )}
 
-                                        {/* Arabic text block with styled ayah numbers as badges */}
-                                        <div className="flex flex-col items-center mb-8">
-                                            <div className="text-center arabic-text text-3xl leading-loose text-brand-dark dark:text-white sepia-text" dir="rtl" style={{ wordSpacing: '0.5em', lineHeight: 2.2 }}>
-                                                {surahData.arabicAyahs.map((ayah, index) => (
-                                                    <React.Fragment key={ayah.numberInSurah}>
-                                                        {ayah.text}
-                                                                                                                <button
-                                                                                                                    type="button"
-                                                                                                                    className="inline-flex items-center justify-center mx-1 w-8 h-8 rounded-full border-2 border-brand-cyan text-brand-cyan font-bold bg-white dark:bg-gray-900 hover:bg-brand-cyan hover:text-white cursor-pointer transition-all shadow-sm align-middle focus:outline-none focus:ring-2 focus:ring-brand-cyan"
-                                                                                                                    style={{ verticalAlign: 'middle', fontSize: '1.1rem' }}
-                                                                                                                    aria-label={`Ayah ${ayah.numberInSurah} options`}
-                                                                                                                    onClick={e => setAyahPopover({ ayah, index, anchor: e.currentTarget })}
-                                                                                                                >
-                                                                                                                    {ayah.numberInSurah}
-                                                                                                                </button>
-                                                    </React.Fragment>
-                                                ))}
-                                            </div>
-                                        </div>
-
-                                        {/* Translation block */}
-                                        <div className="space-y-4 px-2 md:px-8">
-                                            {surahData.translationAyahs.map((tAyah, idx) => (
-                                                <div key={tAyah.numberInSurah} className="text-base text-brand-gray dark:text-gray-400 sepia-text-light leading-relaxed">
-                                                    {tAyah.text}
-                                                </div>
-                                            ))}
-                                        </div>
+                    {/* Verses with translations */}
+                    <div className="space-y-8">
+                        {surahData.arabicAyahs.map((ayah, index) => (
+                            <div key={ayah.numberInSurah} className="mb-4">
+                                <div className="text-right arabic-text text-3xl leading-loose text-brand-dark dark:text-white sepia-text" dir="rtl" style={{ wordSpacing: '0.5em', lineHeight: 2.2 }}>
+                                    {ayah.text}
+                                    <button
+                                        type="button"
+                                        className="inline-flex items-center justify-center mx-1 w-8 h-8 rounded-full border-2 border-brand-cyan text-brand-cyan font-bold bg-white dark:bg-gray-900 hover:bg-brand-cyan hover:text-white cursor-pointer transition-all shadow-sm align-middle focus:outline-none focus:ring-2 focus:ring-brand-cyan"
+                style={{ verticalAlign: 'middle', fontSize: '1.1rem' }}
+                                        aria-label={`Ayah ${ayah.numberInSurah} options`}
+                                        onClick={e => setAyahPopover({ ayah, index, anchor: e.currentTarget })}
+                                    >
+                                        {ayah.numberInSurah}
+                                    </button>
+                                </div>
+                                <div className="text-base text-brand-gray dark:text-gray-400 sepia-text-light leading-relaxed mt-2" dir="ltr">
+                                    {surahData.translationAyahs[index]?.text}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </main>
         </div>
