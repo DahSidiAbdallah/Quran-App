@@ -39,8 +39,11 @@ const SurahListItem = ({ surah, appLang, searchTerm }: { surah: Surah, appLang: 
         <div className="flex items-center gap-4">
             <NumberingWrapper number={surah.number} />
             <div>
-                <h3 className="font-bold text-brand-dark dark:text-white">{highlight(surah.englishName, searchTerm)}</h3>
-                <p className="text-xs text-brand-gray dark:text-gray-500 uppercase">{surah.revelationType} &bull; {surah.numberOfAyahs} {uiT[appLang].surah}</p>
+                <h3 className="font-bold text-brand-dark dark:text-white">
+                    {highlight(surah.englishName, searchTerm)}
+                    <span className="font-normal text-brand-gray dark:text-gray-500 ml-2">{surah.englishNameTranslation}</span>
+                </h3>
+                <p className="text-xs text-brand-gray dark:text-gray-500">{surah.numberOfAyahs} verses</p>
             </div>
         </div>
         <div className="text-right">
@@ -142,9 +145,9 @@ const SurahListPage = () => {
                         placeholder={`Search ${activeTab}..`}
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        className="w-full pl-10 pr-4 py-3 bg-slate-100 dark:bg-gray-800 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-cyan focus-visible:ring-4"
+                        className="w-full pl-4 pr-10 py-3 bg-slate-100 dark:bg-gray-800 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-cyan focus-visible:ring-4"
                     />
-                    <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-brand-gray" />
+                    <SearchIcon className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-brand-gray" />
                 </div>
             </header>
 
