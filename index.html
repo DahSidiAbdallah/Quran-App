@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/assets/Quran.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quran App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+              serif: ['Amiri', 'serif'],
+              naskh: ['Noto Naskh Arabic', 'serif'],
+            },
+            colors: {
+              'brand-cyan': '#2CA5B4',
+              'brand-teal': '#16A085',
+              'brand-light': '#F8F9FA',
+              'brand-dark': '#343A40',
+              'brand-gray': '#6C757D',
+              'sepia': '#FBF0D9',
+              'sepia-dark': '#5B4636',
+              'sepia-text': '#704214',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        --font-size-translation: 16px;
+        --font-size-arabic: 30px;
+        --font-family-translation: 'Poppins', sans-serif;
+        --font-family-arabic: 'Amiri', serif;
+      }
+      body {
+        font-family: var(--font-family-translation);
+        font-size: var(--font-size-translation);
+      }
+      .arabic-text {
+        font-family: var(--font-family-arabic);
+        font-size: var(--font-size-arabic);
+        line-height: 1.8;
+      }
+      .theme-sepia {
+        background-color: #FBF0D9 !important;
+        color: #5B4636 !important;
+      }
+      .theme-sepia .sepia-bg { background-color: #FBF0D9 !important; }
+      .theme-sepia .sepia-text { color: #5B4636 !important; }
+      .theme-sepia .sepia-text-light { color: #704214 !important; }
+      .theme-sepia .sepia-border { border-color: #E8D5B1 !important; }
+      .theme-sepia .sepia-card-bg { background-color: #F4E5C7 !important; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.8.0",
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.14.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "Quran App",
+  "description": "A modern, user-friendly Quran application for daily reading, exploration, and study. It features a clean interface, access to all surahs and ayahs with translations, progress tracking, and an AI-powered assistant to answer your questions.",
+  "requestFramePermissions": [
+    "camera",
+    "deviceorientation"
+  ]
+}
