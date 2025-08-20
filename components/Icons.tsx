@@ -255,21 +255,21 @@ export const NumberingIcon: React.FC<IconProps> = ({ className }) => (
     <g filter="url(#shadow)">
       <polygon
         points="24,4 31.3,8.7 40,8.7 44.7,16 44.7,24 40,31.3 31.3,31.3 24,44 16.7,31.3 8,31.3 3.3,24 3.3,16 8,8.7 16.7,8.7"
-        fill="#2CA5B4"
-        stroke="#2CA5B4"
+        fill="#1CC5D8"
+        stroke="#1CC5D8"
         strokeWidth="2"
       />
       <polygon
         points="24,8 29.8,11.4 36.6,11.4 40,17.2 40,24 36.6,29.8 29.8,29.8 24,40 18.2,29.8 11.4,29.8 8,24 8,17.2 11.4,11.4 18.2,11.4"
         fill="#fff"
-        stroke="#2CA5B4"
+        stroke="#1CC5D8"
         strokeWidth="1.5"
       />
-      <circle cx="24" cy="24" r="8" fill="#E0F7FA" stroke="#2CA5B4" strokeWidth="1.5" />
+      <circle cx="24" cy="24" r="8" fill="#E0FBFF" stroke="#1CC5D8" strokeWidth="1.5" />
     </g>
     <defs>
       <filter id="shadow" x="0" y="0" width="48" height="48" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-        <feDropShadow dx="0" dy="2" stdDeviation="2" floodColor="#2CA5B4" floodOpacity="0.10" />
+        <feDropShadow dx="0" dy="2" stdDeviation="2" floodColor="#1CC5D8" floodOpacity="0.10" />
       </filter>
     </defs>
   </svg>

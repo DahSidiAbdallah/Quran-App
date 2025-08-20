@@ -20,7 +20,7 @@ const BottomNav = () => {
     <nav className="fixed bottom-0 left-0 right-0 h-20 bg-white/80 backdrop-blur-sm shadow-[0_-2px_10px_rgba(0,0,0,0.05)] max-w-md mx-auto flex justify-around items-center rounded-t-2xl">
       <NavItem to="/" icon={<HomeIcon className="w-7 h-7" />} />
       <NavItem to="/surahs" icon={<BookOpenIcon className="w-7 h-7" />} />
-      <div className="bg-brand-cyan text-white p-4 rounded-full -mt-10 shadow-lg shadow-cyan-500/50">
+      <div className="bg-brand-cyan text-white p-4 rounded-full -mt-10 shadow-lg shadow-brand-cyan/50">
           <GridIcon className="w-8 h-8"/>
       </div>
       <NavItem to="/prayers" icon={<ClockIcon className="w-7 h-7" />} />

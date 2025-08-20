@@ -79,7 +79,7 @@ const ProfilePage = () => {
                  <div className="pt-4">
                      <button
                         onClick={() => navigate('/settings')}
-                        className="w-full bg-brand-cyan text-white font-bold py-3 px-4 rounded-lg shadow-lg shadow-cyan-500/50 hover:bg-brand-teal transition-colors"
+                        className="w-full bg-brand-cyan text-white font-bold py-3 px-4 rounded-lg shadow-lg shadow-brand-cyan/50 hover:bg-brand-teal transition-colors"
                     >
                         Save Changes
                     </button>

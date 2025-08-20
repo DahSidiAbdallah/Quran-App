@@ -175,7 +175,7 @@ const SurahListPage = () => {
             
             {lastReadSurah && showBanner && (
                  <div className="fixed bottom-20 left-0 right-0 p-4 max-w-md mx-auto z-20">
-                                <div className="relative bg-white border-2 border-brand-cyan rounded-2xl flex items-center shadow-lg shadow-cyan-500/10 px-4 py-3 gap-3">
+                                <div className="relative bg-white border-2 border-brand-cyan rounded-2xl flex items-center shadow-lg shadow-brand-cyan/10 px-4 py-3 gap-3">
                                     <button 
                                         onClick={(e) => {
                                             e.stopPropagation();
