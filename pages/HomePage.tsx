@@ -2,6 +2,8 @@ import uiT from '../locales';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MenuIcon, ChatIcon } from '../components/Icons';
+import ScheduleCard from '../components/ScheduleCard';
+import CommunityCard from '../components/CommunityCard';
 import useLocalStorage from '../hooks/useLocalStorage';
 import { LastRead, UserProfile } from '../types';
 
@@ -33,7 +35,7 @@ const CompletionCard = () => {
     const completionPercentage = ((lastRead.surah || 1) / 114) * 100;
 
     return (
-        <div className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white p-5 rounded-2xl shadow-lg shadow-cyan-500/30">
+        <div className="bg-gradient-to-r from-brand-cyan to-brand-teal text-white p-5 rounded-2xl shadow-lg shadow-brand-cyan/30">
             <div className="flex justify-between items-start">
                 <div>
                     <h3 className="font-semibold text-lg">Quran Completion</h3>
@@ -66,6 +68,8 @@ const HomePage = () => {
           <h1 className="text-2xl font-bold text-brand-dark dark:text-white">Welcome, {profile.name}!</h1>
         </div>
         <CompletionCard />
+        <ScheduleCard />
+        <CommunityCard />
       </main>
     </div>
   );
